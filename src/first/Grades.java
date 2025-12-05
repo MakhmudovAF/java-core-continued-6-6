@@ -1,7 +1,6 @@
 package first;
 
 public class Grades {
-
     private String capitalize(String str) {
         return str.substring(0,1).toUpperCase() + str.substring(1);
     }
@@ -29,8 +28,9 @@ public class Grades {
     public void gradeBeautifier(String grades) {
         // реализуйте метод здесь
         String[] records = grades.split(";");
-        for (String record : records) {
-            String[] parts = record.split(",");
+
+        for (String student : records) {
+            String[] parts = student.split(",");
             StringBuilder sb = new StringBuilder();
             sb.append(capitalize(parts[0]))
                     .append(" ")
@@ -39,8 +39,7 @@ public class Grades {
                     .append(parts[2].toLowerCase())
                     .append(" — ")
                     .append(gradeToString(parts[3]));
-
-            System.out.println(sb.toString());
+            System.out.println(sb);
         }
     }
 }
